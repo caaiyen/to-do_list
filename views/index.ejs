@@ -9,9 +9,10 @@
 </head>
 <style>
     .body {
-        background-image: url("https://lh3.googleusercontent.com/proxy/wfs94hhZjP7yM2PXzfVZX6QdWDYnGBm5yJ8nxRBh324pzD_IDDeM9gFbC2hMTy7wULMXxFEwIoQeqkpYyNnT8Uw3UONOpBsCJzavhUXjsFB7kjgz1CltA5k");
+        background-image: url("bg.jpg");
         background-repeat: no-repeat;
         background-size: cover;
+        background-color: black;
     }
     
     .container {
@@ -21,23 +22,31 @@
     .header {
         background-color: wheat;
     }
+    
+    td {
+        color: white;
+    }
+    
+    th {
+        text-align: center;
+    }
 </style>
 
 <body class="body">
     <div class="container">
         <br>
         <form method="post" action="/add">
-            <input type="text" name="date" placeholder="Date" required>
+            <input type="text" name="date" placeholder="Target Date" required>
             <input type="text" name="task" placeholder="Task" required>
-            <button type="submit">Save</button>
+            <button class="btn btn-success" type="submit">Save</button>
         </form>
         <br>
         <table class="table table-bordered">
             <tr class="header">
-                <td>date</td>
-                <td>task</td>
-                <td>target date</td>
-                <td></td>
+                <th>date</th>
+                <th>task</th>
+                <th>target date</th>
+                <th></th>
             </tr>
             <%for(i=0; i <data.length; i++){ %>
                 <tr>
@@ -49,10 +58,6 @@
 
                     <td>
                         <%= data[i].task %>
-                    </td>
-
-                    <td>
-
                     </td>
 
                     <td>

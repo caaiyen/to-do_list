@@ -15,12 +15,12 @@ app.get("/", (req, res) => {
 app.get("/delete", (req, res) => {
     values.pop();
     res.render("index", { data: values })
+
 })
 
 app.post("/add", urlEncodedParser, (req, res) => {
     values.push(req.body)
     res.redirect("/")
-        // res.status(200).send("connected");
 })
 
 app.listen(PORT, () => {
